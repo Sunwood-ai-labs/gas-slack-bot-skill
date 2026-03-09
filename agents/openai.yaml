@@ -1,0 +1,7 @@
+interface:
+  display_name: "GAS Slack Bot"
+  short_description: "Build a GAS-based Slack bot using logged-in Chrome for Google and Slack setup."
+  default_prompt: "Use $gas-slack-bot-skill to create and configure a Google Apps Script Slack bot with logged-in Chrome."
+
+policy:
+  allow_implicit_invocation: true

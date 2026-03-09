@@ -1,0 +1,25 @@
+{
+  "name": "gas-slack-bot",
+  "version": "1.0.0",
+  "description": "Serverless Slack bot on Google Apps Script",
+  "main": "Code.js",
+  "scripts": {
+    "check": "node --check Code.js",
+    "clasp:login": "clasp login",
+    "clasp:create": "clasp create --type standalone --title \"__BOT_NAME__\"",
+    "clasp:push": "clasp push",
+    "clasp:open": "clasp open"
+  },
+  "keywords": [
+    "gas",
+    "google-apps-script",
+    "slack",
+    "bot"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@google/clasp": "^3.2.0"
+  }
+}
