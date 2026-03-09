@@ -1,24 +1,17 @@
 # GAS Slack Bot Skill
 
-Google Apps Script と Slack を組み合わせた Bot を、Codex とログイン済み Chrome を使ってセットアップするための Skill です。
+Google Apps Script と Slack を組み合わせた Bot を、Codex とログイン済み Chrome を使って構築するための skill です。
 
-## このリポジトリでできること
+## この docs で分かること
 
-- GAS x Slack Bot 用の Codex Skill を再利用できる
-- 生成先 Bot repo のひな形をすぐに作れる
-- Google と Slack の管理画面設定をログイン済みセッションで安全に進められる
-- 実運用で詰まりやすい箇所と回避策を参照できる
+- skill の役割
+- 生成される構成
+- 実行手順
+- よくある詰まりどころ
 
-## 推奨フロー
+## 読み進め方
 
-1. 先に [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) を使います。
-2. この repo の scaffold script で生成先 Bot repo を作ります。
-3. Apps Script、Slack App、デプロイ、最終確認までガイドに沿って進めます。
-
-## ガイド
-
-- [はじめに](./guide/getting-started.md)
-- [使い方](./guide/usage.md)
-- [構成](./guide/architecture.md)
-- [トラブルシュート](./guide/troubleshooting.md)
-
+1. [Getting Started](D:\Prj\gas-slack-bot-skill\docs\ja\guide\getting-started.md) で前提条件を確認する
+2. [Usage](D:\Prj\gas-slack-bot-skill\docs\ja\guide\usage.md) で実行の流れを把握する
+3. [Architecture](D:\Prj\gas-slack-bot-skill\docs\ja\guide\architecture.md) で生成物の責務を確認する
+4. [Troubleshooting](D:\Prj\gas-slack-bot-skill\docs\ja\guide\troubleshooting.md) で詰まりどころを参照する

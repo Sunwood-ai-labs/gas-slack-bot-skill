@@ -22,3 +22,8 @@
 - use the send button explicitly
 - confirm the message appears in channel history before waiting for the bot reply
 
+## GitHub Pages Fails At `Setup Pages`
+
+- If the workflow fails with `Not Found` or a message that the current plan does not support GitHub Pages, the workflow itself is usually correct.
+- This commonly happens when the repository is private and the current GitHub plan does not allow Pages for that repository.
+- Keep `.github/workflows/deploy-docs.yml` committed, then switch the repository to public visibility or enable Pages on a supported plan before rerunning the workflow.

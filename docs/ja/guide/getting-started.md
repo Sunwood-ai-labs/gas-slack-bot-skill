@@ -1,19 +1,14 @@
-# はじめに
+# Getting Started
 
-## 前提
+## 前提条件
 
-- 専用 Chrome プロファイルで Google にログイン済みであること
-- 同じ Chrome プロファイルで Slack にログイン済みであること
-- ローカルに Node.js があること
-- Apps Script と Slack App を作成できる権限があること
+- Codex がローカル workspace を扱えること
+- [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) を使えること
+- Google Apps Script と Slack の設定対象ワークスペースにアクセスできること
 
-## 最初の流れ
+## 最初にやること
 
-1. `$logged-in-google-chrome` で専用 Chrome を起動または再利用します。
-2. `scripts/scaffold_gas_slack_bot.ps1` で生成先 Bot repo を作成します。
-3. CDP で Playwright を接続します。
-4. Apps Script プロジェクトを作って `Code.js` を投入します。
-5. Slack App を作成してインストールします。
-6. Web App をデプロイして `/exec` URL を Slack に設定します。
-7. Bot を対象チャンネルに招待して実メッセージで確認します。
-
+1. ログイン済み Chrome セッションを立ち上げる
+2. scaffold script で生成先 repo を作る
+3. `SKILL.md` に沿って Google 側と Slack 側の設定を進める
+4. 実際に Slack へメッセージを送って Bot の応答を確認する

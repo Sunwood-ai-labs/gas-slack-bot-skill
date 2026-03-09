@@ -1,22 +1,15 @@
-# 構成
+# Architecture
+
+## Skill の役割分担
+
+- `SKILL.md` が全体フローを定義する
+- `scripts/scaffold_gas_slack_bot.ps1` が生成先 repo を初期化する
+- `assets/templates/` が再利用テンプレートを提供する
+- `references/` が実運用での判断材料を補完する
 
 ## 実行モデル
 
-1. ユーザーが Slack に投稿する
-2. Slack Events API が Apps Script Web App にイベントを送る
-3. `doPost(e)` が payload を検証して対象イベントだけ処理する
-4. GAS が Slack Web API の `chat.postMessage` を呼ぶ
-5. Bot が同じチャンネルまたはスレッドへ返信する
-
-## セキュリティモデル
-
-- 秘密情報は Apps Script `Script Properties` に保存する
-- デフォルトテンプレートは payload 内の verification token を使って検証する
-- 重複イベントは `CacheService` で除外する
-
-## ブラウザ設定モデル
-
-- Chrome は専用 user-data-dir で通常起動する
-- Playwright はあとから CDP で接続する
-- Google と Slack の設定作業はログイン済みブラウザで行う
-
+- ローカルでは PowerShell で scaffold を行う
+- ブラウザ操作ではログイン済み Chrome を再利用する
+- 実行先は Google Apps Script Web App を前提にする
+- Slack との接続確認は実チャンネル上の投稿で行う

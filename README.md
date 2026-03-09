@@ -80,3 +80,8 @@ gas-slack-bot-skill/
 - The default implementation uses Slack verification-token payload checking because Apps Script Web Apps do not expose the request-signature headers in a practical way.
 - For a stricter security model based on Slack signing secret verification, migrate the runtime to a platform that exposes raw HTTP headers, such as Cloud Run or Cloud Functions.
 - VitePress documentation is included under `docs/` and can be published with the GitHub Pages workflow in `.github/workflows/deploy-docs.yml`.
+
+## Pages Limitation
+
+- If this repository remains private, GitHub Pages may be unavailable depending on the current GitHub plan.
+- Keep the workflow committed, then switch the repository to public visibility or enable Pages on a supported plan before expecting a live docs site.

@@ -1,22 +1,18 @@
-# 使い方
+# Usage
 
-## 基本フロー
+## 標準フロー
 
-- skill を使って生成先 repo を作る
-- Bot の挙動がオウム返し以外なら `Code.js` を調整する
-- Google と Slack の設定はログイン済みブラウザ上で行う
-- 秘密情報は Apps Script の `Script Properties` に保存する
-- Event Subscriptions が不安定なら App Manifest に切り替える
+1. scaffold script で Apps Script 向けの repo 一式を生成する
+2. Apps Script プロジェクトを作成してコードを投入する
+3. Slack App を作成し、権限と Event Subscriptions を設定する
+4. Apps Script の Script Properties に必要な値を入れる
+5. Web App をデプロイして Slack から疎通確認する
 
-## 生成されるファイル
-
-scaffold script で主に次を生成します。
+## 生成物
 
 - `Code.js`
 - `appsscript.json`
+- `README.md`
 - `package.json`
 - `.clasp.json.example`
-- `.gitignore`
-- `README.md`
 - `slack-app-manifest.json`
-
