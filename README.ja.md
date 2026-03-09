@@ -12,6 +12,8 @@ Google Apps Script と Slack を使った Bot を、ローカルの scaffold と
 
 Google と Slack の管理画面操作は、[`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) を前提にしています。Playwright で新規ブラウザを立ち上げるのではなく、ログイン済み Chrome に CDP 接続してセットアップを進める想定です。
 
+[English README](D:\Prj\gas-slack-bot-skill\README.md) | [Docs](D:\Prj\gas-slack-bot-skill\docs\ja\index.md)
+
 ## 含まれているもの
 
 - [SKILL.md](D:\Prj\gas-slack-bot-skill\SKILL.md): Skill 本体の手順
@@ -50,8 +52,10 @@ powershell -ExecutionPolicy Bypass -File .\scripts\scaffold_gas_slack_bot.ps1 `
 ```text
 gas-slack-bot-skill/
 |- SKILL.md
+|- LICENSE
 |- README.md
 |- README.ja.md
+|- docs/
 |- agents/
 |  `- openai.yaml
 |- scripts/
@@ -75,3 +79,4 @@ gas-slack-bot-skill/
 - 秘密情報は生成先 repo に入れず、Apps Script の `Script Properties` に設定する前提です。
 - デフォルト実装では、Apps Script Web App の制約により Slack Signing Secret のヘッダー検証ではなく、Verification Token ベースの検証を使っています。
 - Slack の署名ヘッダーを厳密に検証したい場合は、Cloud Run や Cloud Functions など、HTTP ヘッダーを直接扱える実行環境への移行が向いています。
+- `docs/` に VitePress ベースのドキュメントを含めており、`.github/workflows/deploy-docs.yml` で GitHub Pages 配信できる構成にしています。
