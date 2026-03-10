@@ -1,4 +1,21 @@
-# GAS Slack Bot Skill
+<div align="center">
+  <h1>GAS Slack Bot Skill</h1>
+  <img src="./docs/public/icon.svg" alt="GAS Slack Bot Skill" width="280">
+  <p>
+    <img src="https://img.shields.io/badge/Codex-Skill-4285F4" alt="Codex Skill">
+    <img src="https://img.shields.io/badge/Google%20Apps%20Script-34A853?logo=googleappsscript&logoColor=white" alt="Google Apps Script">
+    <img src="https://img.shields.io/badge/Slack-Bot-EA4335?logo=slack&logoColor=white" alt="Slack Bot">
+    <img src="https://img.shields.io/badge/Docs-VitePress-FBBC05?logo=vitepress&logoColor=202124" alt="VitePress">
+  </p>
+  <p>
+    <a href="./README.md">
+      <img src="https://img.shields.io/badge/Language-English-4285F4" alt="English">
+    </a>
+    <a href="./README.ja.md">
+      <img src="https://img.shields.io/badge/Language-Japanese-34A853" alt="Japanese">
+    </a>
+  </p>
+</div>
 
 Build and configure a Google Apps Script x Slack bot by combining local scaffolding with a logged-in Chrome setup workflow.
 
@@ -79,9 +96,9 @@ gas-slack-bot-skill/
 - Secrets are expected to live in Apps Script `Script Properties`, not in the generated repository.
 - The default implementation uses Slack verification-token payload checking because Apps Script Web Apps do not expose the request-signature headers in a practical way.
 - For a stricter security model based on Slack signing secret verification, migrate the runtime to a platform that exposes raw HTTP headers, such as Cloud Run or Cloud Functions.
-- VitePress documentation is included under `docs/` and can be published with the GitHub Pages workflow in `.github/workflows/deploy-docs.yml`.
+- VitePress documentation is included under `docs/` and is intended to publish from `.github/workflows/deploy-docs.yml`.
 
-## Pages Limitation
+## Published Docs
 
-- If this repository remains private, GitHub Pages may be unavailable depending on the current GitHub plan.
-- Keep the workflow committed, then switch the repository to public visibility or enable Pages on a supported plan before expecting a live docs site.
+- Public repository: [Sunwood-ai-labs/gas-slack-bot-skill](https://github.com/Sunwood-ai-labs/gas-slack-bot-skill)
+- Docs site: [sunwood-ai-labs.github.io/gas-slack-bot-skill](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/)

@@ -1,24 +1,48 @@
-# GAS Slack Bot Skill
+---
+layout: home
 
-Build and configure a Google Apps Script x Slack bot with Codex, while reusing a logged-in Chrome session for the Google and Slack admin work.
+hero:
+  name: "GAS Slack Bot Skill"
+  text: "Build Google Apps Script x Slack bots with a logged-in Chrome workflow."
+  tagline: "A Codex skill for scaffolding, browser-driven setup, deployment, and verification."
+  image:
+    src: /icon.svg
+    alt: GAS Slack Bot Skill
+  actions:
+    - theme: brand
+      text: Getting Started
+      link: /guide/getting-started
+    - theme: alt
+      text: Japanese Docs
+      link: /ja/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/Sunwood-ai-labs/gas-slack-bot-skill
 
-## What This Repository Gives You
+features:
+  - title: Scaffold and Templates
+    details: Generate a bot repo with Apps Script, manifest, README, and bootstrap templates ready to customize.
+  - title: Logged-in Browser Setup
+    details: Reuse a Chrome session that is already signed in, so Google and Slack admin work can happen without fragile fresh-browser logins.
+  - title: End-to-End Verification
+    details: Carry the flow through deployment, Slack event wiring, and a real message-based verification step.
+---
 
-- a reusable Codex skill for end-to-end GAS x Slack bot setup
-- scaffold templates for the target bot repository
-- a repeatable browser-driven setup path that works with logged-in Google and Slack sessions
-- troubleshooting notes from a real successful setup run
+## Overview
 
-## Recommended Path
+`gas-slack-bot-skill` is a practical skill for building a working Slack bot on Google Apps Script while reusing a logged-in Chrome session for the browser steps.
 
-1. Start with the [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) skill.
-2. Use the scaffold script in this repo to create the target bot repository.
-3. Follow the guide pages for Apps Script setup, Slack App setup, deployment, and verification.
+It packages the scaffolding, browser workflow, and troubleshooting notes needed to go from an empty repo to a verified bot.
 
-## Guide
+## Ideal For
 
-- [Getting Started](./guide/getting-started.md)
-- [Usage](./guide/usage.md)
-- [Architecture](./guide/architecture.md)
-- [Troubleshooting](./guide/troubleshooting.md)
+- users who want to build a lightweight Slack bot on Google Apps Script
+- flows that need real browser UI work inside Google and Slack
+- setups where Codex should reuse an already logged-in Chrome profile
 
+## Quick Links
+
+- [Getting Started](/guide/getting-started)
+- [Usage](/guide/usage)
+- [Architecture](/guide/architecture)
+- [Troubleshooting](/guide/troubleshooting)

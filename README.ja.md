@@ -1,6 +1,23 @@
-# GAS Slack Bot Skill
+<div align="center">
+  <h1>GAS Slack Bot Skill</h1>
+  <img src="./docs/public/icon.svg" alt="GAS Slack Bot Skill" width="280">
+  <p>
+    <img src="https://img.shields.io/badge/Codex-Skill-4285F4" alt="Codex Skill">
+    <img src="https://img.shields.io/badge/Google%20Apps%20Script-34A853?logo=googleappsscript&logoColor=white" alt="Google Apps Script">
+    <img src="https://img.shields.io/badge/Slack-Bot-EA4335?logo=slack&logoColor=white" alt="Slack Bot">
+    <img src="https://img.shields.io/badge/Docs-VitePress-FBBC05?logo=vitepress&logoColor=202124" alt="VitePress">
+  </p>
+  <p>
+    <a href="./README.md">
+      <img src="https://img.shields.io/badge/Language-English-4285F4" alt="English">
+    </a>
+    <a href="./README.ja.md">
+      <img src="https://img.shields.io/badge/Language-Japanese-34A853" alt="Japanese">
+    </a>
+  </p>
+</div>
 
-Google Apps Script と Slack を使った Bot を、ローカルの scaffold とログイン済み Chrome を組み合わせて構築するための Codex Skill です。
+Google Apps Script と Slack を使った Bot を、ローカルの scaffold とログイン済み Chrome を組み合わせて構築するための Codex skill です。
 
 このリポジトリには、次の一連の構築作業を再利用しやすい形でまとめています。
 
@@ -16,7 +33,7 @@ Google と Slack のブラウザ操作は、[`$logged-in-google-chrome`](D:\Prj\
 
 ## 含まれているもの
 
-- [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md): Skill 本体の手順書
+- [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md): skill 本体の手順書
 - [`scripts/scaffold_gas_slack_bot.ps1`](D:\Prj\gas-slack-bot-skill\scripts\scaffold_gas_slack_bot.ps1): 生成先 repo を作る PowerShell スクリプト
 - [`assets/templates`](D:\Prj\gas-slack-bot-skill\assets\templates): Apps Script、Slack manifest、repo 初期ファイルのテンプレート
 - [`references/end-to-end-flow.md`](D:\Prj\gas-slack-bot-skill\references\end-to-end-flow.md): 推奨の実行順序
@@ -79,9 +96,9 @@ gas-slack-bot-skill/
 - 秘密情報は生成先 repo ではなく、Apps Script の `Script Properties` に設定する前提です。
 - デフォルト実装では、Apps Script Web App 側で Slack Signing Secret 検証に必要なヘッダーを扱いづらいため、Verification Token ベースの検証を採用しています。
 - Slack の署名を厳密に検証したい場合は、Cloud Run や Cloud Functions など、HTTP ヘッダーを素直に扱える実行基盤への移行を検討してください。
-- `docs/` に VitePress ベースのドキュメントを含めており、`.github/workflows/deploy-docs.yml` で GitHub Pages 配信できる構成にしています。
+- VitePress ベースの docs は `docs/` 配下にあり、`.github/workflows/deploy-docs.yml` から公開できる構成です。
 
-## GitHub Pages 補足
+## 公開リンク
 
-- この repo を private のまま運用する場合、GitHub の現在のプランによっては GitHub Pages を利用できません。
-- workflow はそのまま残し、公開サイトが必要になった段階で repo を public に切り替えるか、Pages 対応プランで有効化してください。
+- 公開リポジトリ: [Sunwood-ai-labs/gas-slack-bot-skill](https://github.com/Sunwood-ai-labs/gas-slack-bot-skill)
+- docs サイト: [sunwood-ai-labs.github.io/gas-slack-bot-skill](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/)
