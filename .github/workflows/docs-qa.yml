@@ -1,0 +1,52 @@
+name: Docs QA
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+
+      - name: Install docs dependencies
+        working-directory: docs
+        run: npm ci
+
+      - name: Build docs
+        working-directory: docs
+        run: npm run docs:build
+
+      - name: Check portable markdown links
+        shell: pwsh
+        run: |
+          $files = @(
+            "README.md",
+            "README.ja.md",
+            "SKILL.md"
+          )
+
+          $files += Get-ChildItem docs,references -Recurse -File -Filter *.md | ForEach-Object { $_.FullName }
+
+          $matches = Select-String -Path $files `
+            -Pattern '\]\((?:[A-Za-z]:\\|file://|/Users/)' `
+            -AllMatches
+
+          if ($matches) {
+            $matches | ForEach-Object {
+              Write-Host ("{0}:{1}:{2}" -f $_.Path, $_.LineNumber, $_.Line.Trim())
+            }
+            throw "Found machine-local markdown links. Use relative or public URLs instead."
+          }

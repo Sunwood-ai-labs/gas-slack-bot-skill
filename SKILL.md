@@ -14,7 +14,7 @@ Build a serverless Slack bot on Google Apps Script and finish the Google and Sla
 - The task includes Slack App creation, scopes, event subscriptions, or installation
 - The workflow should reuse an already logged-in Google or Slack session
 
-Always use [$logged-in-google-chrome](D:\Prj\logged-in-google-chrome-skill\SKILL.md) first for the browser session.
+Always use [logged-in-google-chrome-skill](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill) first for the browser session.
 
 ## Default Outcome
 
@@ -29,7 +29,7 @@ Produce:
 ## Quick Start
 
 1. Scaffold the target repo with [scripts/scaffold_gas_slack_bot.ps1](./scripts/scaffold_gas_slack_bot.ps1).
-2. Launch or reuse the dedicated Chrome profile with [$logged-in-google-chrome](D:\Prj\logged-in-google-chrome-skill\SKILL.md).
+2. Launch or reuse the dedicated Chrome profile with [logged-in-google-chrome-skill](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill).
 3. Attach Playwright over CDP in `js_repl`.
 4. Create or open the Apps Script project and populate the GAS code.
 5. Create the Slack App, add scopes, and install it.
