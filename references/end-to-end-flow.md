@@ -10,7 +10,7 @@ Use this flow when you need to take a GAS x Slack bot from empty repo to live ve
 
 ## 2. Start the logged-in browser
 
-- Use [$logged-in-google-chrome](D:\Prj\logged-in-google-chrome-skill\SKILL.md)
+- Use [logged-in-google-chrome-skill](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill)
 - Confirm the dedicated Chrome profile is running
 - Attach Playwright over CDP
 

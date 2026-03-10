@@ -27,17 +27,17 @@ Google Apps Script と Slack を使った Bot を、ローカルの scaffold と
 - Script Properties と Event Subscriptions を設定する
 - Slack 上で実メッセージを送って動作確認する
 
-Google と Slack のブラウザ操作は、[`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) と組み合わせて行う前提です。Playwright で新規ブラウザを立ち上げるのではなく、CDP 接続したログイン済み Chrome を使って安全に進められます。
+Google と Slack のブラウザ操作は、関連リポジトリ [`logged-in-google-chrome-skill`](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill) と組み合わせて行う前提です。Playwright で新規ブラウザを立ち上げるのではなく、CDP 接続したログイン済み Chrome を使って安全に進められます。
 
-[English README](D:\Prj\gas-slack-bot-skill\README.md) | [Docs](D:\Prj\gas-slack-bot-skill\docs\ja\index.md)
+[English README](./README.md) | [Docs Site](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/ja/)
 
 ## 含まれているもの
 
-- [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md): skill 本体の手順書
-- [`scripts/scaffold_gas_slack_bot.ps1`](D:\Prj\gas-slack-bot-skill\scripts\scaffold_gas_slack_bot.ps1): 生成先 repo を作る PowerShell スクリプト
-- [`assets/templates`](D:\Prj\gas-slack-bot-skill\assets\templates): Apps Script、Slack manifest、repo 初期ファイルのテンプレート
-- [`references/end-to-end-flow.md`](D:\Prj\gas-slack-bot-skill\references\end-to-end-flow.md): 推奨の実行順序
-- [`references/blockers-and-workarounds.md`](D:\Prj\gas-slack-bot-skill\references\blockers-and-workarounds.md): よくある詰まりどころと回避策
+- [`SKILL.md`](./SKILL.md): skill 本体の手順書
+- [`scripts/scaffold_gas_slack_bot.ps1`](./scripts/scaffold_gas_slack_bot.ps1): 生成先 repo を作る PowerShell スクリプト
+- [`assets/templates`](./assets/templates): Apps Script、Slack manifest、repo 初期ファイルのテンプレート
+- [`references/end-to-end-flow.md`](./references/end-to-end-flow.md): 推奨の実行順序
+- [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md): よくある詰まりどころと回避策
 
 ## 使いどころ
 
@@ -50,7 +50,7 @@ Google と Slack のブラウザ操作は、[`$logged-in-google-chrome`](D:\Prj\
 
 ## クイックスタート
 
-1. 先に [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) で専用 Chrome セッションを起動または再利用します。
+1. 先に関連リポジトリ [`logged-in-google-chrome-skill`](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill) を使って、専用 Chrome セッションを起動または再利用します。
 2. 次のコマンドで Bot 用 repo を生成します。
 
 ```powershell
@@ -61,8 +61,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\scaffold_gas_slack_bot.ps1 `
   -ChannelId C0AJZQJCVTR
 ```
 
-3. 生成後は [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md) の流れに沿ってセットアップします。
-4. UI 操作や verification で詰まったら [`references/blockers-and-workarounds.md`](D:\Prj\gas-slack-bot-skill\references\blockers-and-workarounds.md) を確認します。
+3. 生成後は [`SKILL.md`](./SKILL.md) の流れに沿ってセットアップします。
+4. UI 操作や verification で詰まったら [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md) を確認します。
 
 ## リポジトリ構成
 

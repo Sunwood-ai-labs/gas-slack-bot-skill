@@ -27,17 +27,17 @@ This repository packages a reusable Codex skill for the full setup path:
 - configure Script Properties and Event Subscriptions
 - verify the bot with a live Slack message
 
-It is designed to work together with [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md), so Google and Slack setup can be completed inside an already logged-in Chrome session attached over CDP.
+It is designed to work together with the related [`logged-in-google-chrome-skill`](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill), so Google and Slack setup can be completed inside an already logged-in Chrome session attached over CDP.
 
-[Japanese README](D:\Prj\gas-slack-bot-skill\README.ja.md) | [Docs](D:\Prj\gas-slack-bot-skill\docs\index.md)
+[Japanese README](./README.ja.md) | [Docs Site](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/)
 
 ## What This Skill Includes
 
-- [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md): the main skill instructions and workflow
-- [`scripts/scaffold_gas_slack_bot.ps1`](D:\Prj\gas-slack-bot-skill\scripts\scaffold_gas_slack_bot.ps1): a PowerShell scaffold script for creating a target GAS Slack bot repo
-- [`assets/templates`](D:\Prj\gas-slack-bot-skill\assets\templates): reusable templates for Apps Script, Slack manifest, and repo bootstrap files
-- [`references/end-to-end-flow.md`](D:\Prj\gas-slack-bot-skill\references\end-to-end-flow.md): the recommended end-to-end execution order
-- [`references/blockers-and-workarounds.md`](D:\Prj\gas-slack-bot-skill\references\blockers-and-workarounds.md): common failure modes and recovery strategies
+- [`SKILL.md`](./SKILL.md): the main skill instructions and workflow
+- [`scripts/scaffold_gas_slack_bot.ps1`](./scripts/scaffold_gas_slack_bot.ps1): a PowerShell scaffold script for creating a target GAS Slack bot repo
+- [`assets/templates`](./assets/templates): reusable templates for Apps Script, Slack manifest, and repo bootstrap files
+- [`references/end-to-end-flow.md`](./references/end-to-end-flow.md): the recommended end-to-end execution order
+- [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md): common failure modes and recovery strategies
 
 ## When To Use It
 
@@ -50,7 +50,7 @@ Use this skill when you want Codex to:
 
 ## Quick Start
 
-1. Use [`$logged-in-google-chrome`](D:\Prj\logged-in-google-chrome-skill\SKILL.md) to launch or attach to the dedicated Chrome session.
+1. Use the related [`logged-in-google-chrome-skill`](https://github.com/Sunwood-ai-labs/logged-in-google-chrome-skill) to launch or attach to the dedicated Chrome session.
 2. Scaffold a target bot repo with:
 
 ```powershell
@@ -61,8 +61,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\scaffold_gas_slack_bot.ps1 `
   -ChannelId C0AJZQJCVTR
 ```
 
-3. Follow the full workflow in [`SKILL.md`](D:\Prj\gas-slack-bot-skill\SKILL.md).
-4. If browser setup gets stuck, check [`references/blockers-and-workarounds.md`](D:\Prj\gas-slack-bot-skill\references\blockers-and-workarounds.md).
+3. Follow the full workflow in [`SKILL.md`](./SKILL.md).
+4. If browser setup gets stuck, check [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md).
 
 ## Repository Structure
 
