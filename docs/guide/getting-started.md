@@ -6,6 +6,7 @@
 - a logged-in Google account in the dedicated Chrome profile
 - a logged-in Slack workspace session in the same Chrome profile
 - Node.js available locally
+- `uv` available locally for any Python-based helper workflow
 - permission to create Apps Script projects and Slack Apps
 
 ## First Run
@@ -18,3 +19,7 @@
 6. Create and install the Slack App.
 7. Deploy the Web App and wire the `/exec` URL into Slack.
 8. Invite the bot to the target channel and send a live test message.
+
+If you add or run Python helpers during local maintenance, use `uv run path/to/script.py`.
+
+If the bot needs Gemini or Slack file analysis, continue with [Case Studies](/guide/case-studies) before you expand the generated `Code.js`.

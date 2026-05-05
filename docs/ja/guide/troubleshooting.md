@@ -12,6 +12,12 @@
 - `settings.event_subscriptions.bot_events` を設定する
 - Event Subscriptions ページを再読み込みして `Verified` を確認する
 
+## Apps Script の Script Properties UI が扱いづらい
+
+- 設定パネルを延々とクリックし続けない
+- 一時的に [assets/templates/script-properties-bootstrap.js](https://github.com/Sunwood-ai-labs/gas-slack-bot-skill/blob/main/assets/templates/script-properties-bootstrap.js) を使う
+- 1 回実行して値の保存を確認したら、本番コードへ戻す
+
 ## Google で未確認アプリ警告が出る
 
 - 詳細表示から意図的に続行する
@@ -21,6 +27,12 @@
 
 - 送信ボタンを明示的に使う
 - Bot の返信を待つ前に、投稿がチャンネル履歴に出たことを確認する
+
+## ファイル 1 件で 2 回返信してしまう
+
+- `message.channels` と `file_shared` を両方見る Bot では、1 つの投稿が二重に届くことがあります
+- `CacheService` と `LockService` を併用して、ファイル処理を 1 回だけ claim してください
+- 修正後は実ファイルを添付して再検証します
 
 ## GitHub Pages workflow が `Setup Pages` で失敗する
 

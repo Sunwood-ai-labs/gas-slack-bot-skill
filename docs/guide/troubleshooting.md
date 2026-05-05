@@ -12,6 +12,12 @@
 - set `settings.event_subscriptions.bot_events`
 - reload the Event Subscriptions page and confirm `Verified`
 
+## Apps Script Script Properties UI Fights Back
+
+- stop retrying the settings panel indefinitely
+- temporarily use [assets/templates/script-properties-bootstrap.js](https://github.com/Sunwood-ai-labs/gas-slack-bot-skill/blob/main/assets/templates/script-properties-bootstrap.js)
+- run it once, confirm the properties exist, then restore the final code
+
 ## Google Shows The Unverified App Warning
 
 - use the advanced path and continue intentionally
@@ -21,6 +27,12 @@
 
 - use the send button explicitly
 - confirm the message appears in channel history before waiting for the bot reply
+
+## File Upload Triggers Two Replies
+
+- if the bot watches both `message.channels` and `file_shared`, one upload can arrive twice
+- claim file processing once with `CacheService` and `LockService`
+- verify with a live file upload after each change
 
 ## GitHub Pages Fails At `Setup Pages`
 

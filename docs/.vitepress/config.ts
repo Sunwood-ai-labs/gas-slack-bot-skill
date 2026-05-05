@@ -72,6 +72,7 @@ export default defineConfig({
         nav: [
           { text: "Home", link: "/" },
           { text: "Guide", link: "/guide/getting-started" },
+          { text: "Cases", link: "/guide/case-studies" },
           { text: "Japanese", link: "/ja/" },
           { text: "GitHub", link: repoUrl },
         ],
@@ -81,6 +82,7 @@ export default defineConfig({
             items: [
               { text: "Getting Started", link: "/guide/getting-started" },
               { text: "Usage", link: "/guide/usage" },
+              { text: "Case Studies", link: "/guide/case-studies" },
               { text: "Architecture", link: "/guide/architecture" },
               { text: "Troubleshooting", link: "/guide/troubleshooting" },
             ],
@@ -101,6 +103,7 @@ export default defineConfig({
         nav: [
           { text: "ホーム", link: "/ja/" },
           { text: "ガイド", link: "/ja/guide/getting-started" },
+          { text: "事例集", link: "/ja/guide/case-studies" },
           { text: "English", link: "/" },
           { text: "GitHub", link: repoUrl },
         ],
@@ -110,6 +113,7 @@ export default defineConfig({
             items: [
               { text: "はじめに", link: "/ja/guide/getting-started" },
               { text: "使い方", link: "/ja/guide/usage" },
+              { text: "事例集", link: "/ja/guide/case-studies" },
               { text: "構成", link: "/ja/guide/architecture" },
               { text: "トラブルシュート", link: "/ja/guide/troubleshooting" },
             ],

@@ -1,0 +1,12 @@
+function codexBootstrapConfig() {
+  PropertiesService.getScriptProperties().setProperties({
+    SLACK_BOT_TOKEN: "__SLACK_BOT_TOKEN__",
+    SLACK_VERIFICATION_TOKEN: "__SLACK_VERIFICATION_TOKEN__",
+    SLACK_ALLOWED_CHANNEL_ID: "__SLACK_ALLOWED_CHANNEL_ID__",
+    SLACK_TEAM_ID: "__SLACK_TEAM_ID__",
+    SLACK_API_APP_ID: "__SLACK_API_APP_ID__",
+    GEMINI_API_KEY: "__GEMINI_API_KEY__",
+    GEMINI_MODEL: "__GEMINI_MODEL__",
+    SLACK_REQUIRE_MENTION: "__SLACK_REQUIRE_MENTION__"
+  }, true);
+}

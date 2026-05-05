@@ -33,6 +33,7 @@ Workaround:
 - Enumerate only visible inputs
 - Click the button through DOM evaluation if needed
 - Confirm the number of property rows increases before filling values
+- If the panel still resists automation, inject and run [assets/templates/script-properties-bootstrap.js](./../assets/templates/script-properties-bootstrap.js), then restore the production code
 
 ## Google blocks the first deploy with an unverified app warning
 
@@ -81,6 +82,19 @@ Workaround:
 
 - Use the send button explicitly
 - Verify by checking the message appears in history, not just in the composer
+
+## Gemini bot replies twice to one uploaded file
+
+Symptom:
+
+- One upload causes both `message.channels` and `file_shared`
+- The bot posts two near-identical replies
+
+Workaround:
+
+- Claim each file ID once before generating a reply
+- Use `CacheService` plus `LockService` together, not cache alone
+- Only the first successful claimant should post the response
 
 ## A value looks saved but is not really committed
 

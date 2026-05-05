@@ -31,6 +31,11 @@ Google と Slack のブラウザ操作は、関連リポジトリ [`logged-in-go
 
 [English README](./README.md) | [Docs Site](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/ja/)
 
+## ローカルツール
+
+- このリポジトリで Python 系の補助処理を実行するときは、`python` ではなく `uv run ...` を使います。
+- Node.js に加えて `uv` もローカルに入れておく前提です。
+
 ## 含まれているもの
 
 - [`SKILL.md`](./SKILL.md): skill 本体の手順書
@@ -38,6 +43,19 @@ Google と Slack のブラウザ操作は、関連リポジトリ [`logged-in-go
 - [`assets/templates`](./assets/templates): Apps Script、Slack manifest、repo 初期ファイルのテンプレート
 - [`references/end-to-end-flow.md`](./references/end-to-end-flow.md): 推奨の実行順序
 - [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md): よくある詰まりどころと回避策
+- [`references/gemini-multimodal-bot.md`](./references/gemini-multimodal-bot.md): Gemini 対応や添付解析 Bot 向けの派生ガイド
+- [`references/case-study-gas-slack-bot-gemini.md`](./references/case-study-gas-slack-bot-gemini.md): Gemini 事例から抽出した実践知
+
+## 事例と派生パターン
+
+- [`Sunwood-ai-labs/gas-slack-bot-gemini`](https://github.com/Sunwood-ai-labs/gas-slack-bot-gemini): 今回の skill 更新に反映した公開事例 repo
+- [Gemini マルチモーダル派生ガイド](./references/gemini-multimodal-bot.md): 次回 Gemini やファイル添付対応 Bot を作るときの最短導線
+- [Gemini 事例メモ](./references/case-study-gas-slack-bot-gemini.md): repo と構築ログから抜き出した再利用ポイント
+
+この更新で、Gemini 向けの再利用 assets も追加しています。
+
+- [`assets/templates/slack-app-manifest.gemini.json`](./assets/templates/slack-app-manifest.gemini.json)
+- [`assets/templates/script-properties-bootstrap.js`](./assets/templates/script-properties-bootstrap.js)
 
 ## 使いどころ
 
@@ -63,6 +81,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\scaffold_gas_slack_bot.ps1 `
 
 3. 生成後は [`SKILL.md`](./SKILL.md) の流れに沿ってセットアップします。
 4. UI 操作や verification で詰まったら [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md) を確認します。
+5. Gemini 対応やファイル解析 Bot を作る場合は、`Code.js` を広げる前に [`references/gemini-multimodal-bot.md`](./references/gemini-multimodal-bot.md) を確認します。
 
 ## リポジトリ構成
 
@@ -76,10 +95,13 @@ gas-slack-bot-skill/
 |- agents/
 |  `- openai.yaml
 |- scripts/
+|  |- install_codex_skill_junction.ps1
 |  `- scaffold_gas_slack_bot.ps1
 |- references/
 |  |- end-to-end-flow.md
-|  `- blockers-and-workarounds.md
+|  |- blockers-and-workarounds.md
+|  |- gemini-multimodal-bot.md
+|  `- case-study-gas-slack-bot-gemini.md
 `- assets/
    `- templates/
       |- Code.js
@@ -88,14 +110,18 @@ gas-slack-bot-skill/
       |- .clasp.json.example
       |- .gitignore
       |- README.md
-      `- slack-app-manifest.json
+      |- slack-app-manifest.json
+      |- slack-app-manifest.gemini.json
+      `- script-properties-bootstrap.js
 ```
 
 ## 補足
 
 - 秘密情報は生成先 repo ではなく、Apps Script の `Script Properties` に設定する前提です。
+- 今後 Python スクリプトを追加する場合も、実行は `uv run path/to/script.py` に統一します。
 - デフォルト実装では、Apps Script Web App 側で Slack Signing Secret 検証に必要なヘッダーを扱いづらいため、Verification Token ベースの検証を採用しています。
 - Slack の署名を厳密に検証したい場合は、Cloud Run や Cloud Functions など、HTTP ヘッダーを素直に扱える実行基盤への移行を検討してください。
+- Gemini 派生の知見は別リファレンスに切り出し、skill 本体は軽いまま必要な場面だけ深掘りできる構成にしています。
 - VitePress ベースの docs は `docs/` 配下にあり、`.github/workflows/deploy-docs.yml` から公開できる構成です。
 
 ## 公開リンク

@@ -7,6 +7,7 @@ Use this flow when you need to take a GAS x Slack bot from empty repo to live ve
 - Create or open the target repo
 - Copy the templates with `scripts/scaffold_gas_slack_bot.ps1`
 - Adjust the behavior in `Code.js` if the bot should do more than echo text
+- For Gemini or attachment-aware bots, also read [references/gemini-multimodal-bot.md](./gemini-multimodal-bot.md)
 
 ## 2. Start the logged-in browser
 
@@ -26,6 +27,7 @@ Use this flow when you need to take a GAS x Slack bot from empty repo to live ve
 - Create a new Slack App from scratch
 - Add `chat:write`
 - Add `channels:history`
+- Add `files:read` when the bot must inspect Slack file uploads
 - Install the app to the target workspace
 - Capture:
   - Bot User OAuth Token
@@ -41,6 +43,9 @@ In `Project Settings`, add:
 - `SLACK_ALLOWED_CHANNEL_ID`
 - `SLACK_TEAM_ID`
 - `SLACK_API_APP_ID`
+- `GEMINI_API_KEY` when the bot calls Gemini
+
+If the settings UI refuses to cooperate during browser automation, temporarily run [assets/templates/script-properties-bootstrap.js](./../assets/templates/script-properties-bootstrap.js) inside the Apps Script project instead of clicking through the panel.
 
 ## 6. Deploy the Web App
 
@@ -64,6 +69,7 @@ Prefer App Manifest for durable setup:
 - open the App Manifest page
 - set `settings.event_subscriptions.request_url`
 - set `settings.event_subscriptions.bot_events = ["message.channels"]`
+- add `file_shared` when the bot should analyze file uploads
 - save
 - if Slack says the URL is not verified, run its verification flow
 
@@ -80,3 +86,4 @@ Reload the Event Subscriptions page and confirm:
 - Invite the bot to the target channel if needed
 - Post a unique message
 - Confirm the bot replies with the expected text
+- For Gemini or attachment-aware bots, upload a real supported file and confirm the bot replies exactly once

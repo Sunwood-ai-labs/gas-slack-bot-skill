@@ -31,6 +31,21 @@ It is designed to work together with the related [`logged-in-google-chrome-skill
 
 [Japanese README](./README.ja.md) | [Docs Site](https://sunwood-ai-labs.github.io/gas-slack-bot-skill/)
 
+## Install Into Codex
+
+Link this repository into your local Codex skills directory with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install_codex_skill_junction.ps1
+```
+
+By default the script creates a junction at `$HOME\.codex\skills\gas-slack-bot`, so changes in this repository are reflected immediately in Codex without copying files.
+
+## Local Tooling
+
+- Use `uv run ...` for any Python-based helper or maintenance task in this repository.
+- Keep `uv` installed locally alongside Node.js so future Python utilities run consistently.
+
 ## What This Skill Includes
 
 - [`SKILL.md`](./SKILL.md): the main skill instructions and workflow
@@ -38,6 +53,19 @@ It is designed to work together with the related [`logged-in-google-chrome-skill
 - [`assets/templates`](./assets/templates): reusable templates for Apps Script, Slack manifest, and repo bootstrap files
 - [`references/end-to-end-flow.md`](./references/end-to-end-flow.md): the recommended end-to-end execution order
 - [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md): common failure modes and recovery strategies
+- [`references/gemini-multimodal-bot.md`](./references/gemini-multimodal-bot.md): the variant guide for Gemini-powered and file-aware bots
+- [`references/case-study-gas-slack-bot-gemini.md`](./references/case-study-gas-slack-bot-gemini.md): extracted lessons from the Gemini example build
+
+## Case Studies And Variants
+
+- [`Sunwood-ai-labs/gas-slack-bot-gemini`](https://github.com/Sunwood-ai-labs/gas-slack-bot-gemini): a public GAS x Slack x Gemini example repo that informed this skill update
+- [Gemini Multimodal Bot Variant](./references/gemini-multimodal-bot.md): the fastest reference when the next bot needs Gemini or attachment handling
+- [Gemini Case Study](./references/case-study-gas-slack-bot-gemini.md): the concrete setup lessons distilled from the repo and the accompanying build log
+
+The skill now includes reusable Gemini-oriented assets:
+
+- [`assets/templates/slack-app-manifest.gemini.json`](./assets/templates/slack-app-manifest.gemini.json)
+- [`assets/templates/script-properties-bootstrap.js`](./assets/templates/script-properties-bootstrap.js)
 
 ## When To Use It
 
@@ -63,6 +91,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\scaffold_gas_slack_bot.ps1 `
 
 3. Follow the full workflow in [`SKILL.md`](./SKILL.md).
 4. If browser setup gets stuck, check [`references/blockers-and-workarounds.md`](./references/blockers-and-workarounds.md).
+5. If you are building a Gemini or file-aware bot, start from [`references/gemini-multimodal-bot.md`](./references/gemini-multimodal-bot.md) before changing `Code.js`.
 
 ## Repository Structure
 
@@ -76,10 +105,13 @@ gas-slack-bot-skill/
 |- agents/
 |  `- openai.yaml
 |- scripts/
+|  |- install_codex_skill_junction.ps1
 |  `- scaffold_gas_slack_bot.ps1
 |- references/
 |  |- end-to-end-flow.md
-|  `- blockers-and-workarounds.md
+|  |- blockers-and-workarounds.md
+|  |- gemini-multimodal-bot.md
+|  `- case-study-gas-slack-bot-gemini.md
 `- assets/
    `- templates/
       |- Code.js
@@ -88,14 +120,18 @@ gas-slack-bot-skill/
       |- .clasp.json.example
       |- .gitignore
       |- README.md
-      `- slack-app-manifest.json
+      |- slack-app-manifest.json
+      |- slack-app-manifest.gemini.json
+      `- script-properties-bootstrap.js
 ```
 
 ## Notes
 
 - Secrets are expected to live in Apps Script `Script Properties`, not in the generated repository.
+- If you add Python scripts later, run them with `uv run path/to/script.py` rather than calling `python` directly.
 - The default implementation uses Slack verification-token payload checking because Apps Script Web Apps do not expose the request-signature headers in a practical way.
 - For a stricter security model based on Slack signing secret verification, migrate the runtime to a platform that exposes raw HTTP headers, such as Cloud Run or Cloud Functions.
+- The Gemini variant is documented separately so the core skill stays lean while still capturing multimodal and file-event patterns.
 - VitePress documentation is included under `docs/` and is intended to publish from `.github/workflows/deploy-docs.yml`.
 
 ## Published Docs

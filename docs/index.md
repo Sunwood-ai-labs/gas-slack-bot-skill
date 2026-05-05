@@ -26,6 +26,8 @@ features:
     details: Reuse a Chrome session that is already signed in, so Google and Slack admin work can happen without fragile fresh-browser logins.
   - title: End-to-End Verification
     details: Carry the flow through deployment, Slack event wiring, and a real message-based verification step.
+  - title: Variant Playbooks
+    details: Reuse dedicated references and templates for Gemini-powered or file-aware bot builds.
 ---
 
 ## Overview
@@ -33,6 +35,8 @@ features:
 `gas-slack-bot-skill` is a practical skill for building a working Slack bot on Google Apps Script while reusing a logged-in Chrome session for the browser steps.
 
 It packages the scaffolding, browser workflow, and troubleshooting notes needed to go from an empty repo to a verified bot.
+
+For local maintenance, Python helpers are expected to run through `uv`.
 
 ## Ideal For
 
@@ -44,5 +48,6 @@ It packages the scaffolding, browser workflow, and troubleshooting notes needed 
 
 - [Getting Started](/guide/getting-started)
 - [Usage](/guide/usage)
+- [Case Studies](/guide/case-studies)
 - [Architecture](/guide/architecture)
 - [Troubleshooting](/guide/troubleshooting)

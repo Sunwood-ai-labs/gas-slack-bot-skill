@@ -29,6 +29,7 @@ $files = @(
   "Code.js",
   "appsscript.json",
   "package.json",
+  ".env.example",
   ".clasp.json.example",
   ".gitignore",
   "README.md",
